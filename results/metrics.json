@@ -1,0 +1,128 @@
+{
+  "dataset": {
+    "users": 53424,
+    "books": 10000,
+    "ratings": 5976479,
+    "train": 4802569,
+    "test": 1173910
+  },
+  "als_tuning": [
+    {
+      "factors": 32,
+      "reg": 0.01,
+      "val_ndcg@10": 0.15241736060261707
+    },
+    {
+      "factors": 32,
+      "reg": 0.1,
+      "val_ndcg@10": 0.15294454761746332
+    },
+    {
+      "factors": 64,
+      "reg": 0.01,
+      "val_ndcg@10": 0.1678138430755795
+    },
+    {
+      "factors": 64,
+      "reg": 0.1,
+      "val_ndcg@10": 0.16791383680693212
+    },
+    {
+      "factors": 128,
+      "reg": 0.01,
+      "val_ndcg@10": 0.1818935324326598
+    },
+    {
+      "factors": 128,
+      "reg": 0.1,
+      "val_ndcg@10": 0.18171337211870556
+    }
+  ],
+  "best_als": {
+    "factors": 128,
+    "reg": 0.01
+  },
+  "hybrid_weight": 0.7,
+  "test_results": {
+    "Popularity": {
+      "precision@10": 0.07339194990720084,
+      "recall@10": 0.04944521757326966,
+      "ndcg@10": 0.090535695211002,
+      "hit_rate@10": 0.4149528505277366,
+      "catalog_coverage": 0.0042,
+      "users_evaluated": 53341,
+      "median_popularity_rank_of_recs": 6.0
+    },
+    "Item-item kNN": {
+      "precision@10": 0.2259387713016254,
+      "recall@10": 0.15434337560050862,
+      "ndcg@10": 0.2706357439288656,
+      "hit_rate@10": 0.8212069515007218,
+      "catalog_coverage": 0.4028,
+      "users_evaluated": 53341,
+      "median_popularity_rank_of_recs": 29.0
+    },
+    "ALS matrix factorization": {
+      "precision@10": 0.24968598263999553,
+      "recall@10": 0.17288555189760546,
+      "ndcg@10": 0.2761525707470841,
+      "hit_rate@10": 0.8783487373690032,
+      "catalog_coverage": 0.4135,
+      "users_evaluated": 53341,
+      "median_popularity_rank_of_recs": 243.0
+    },
+    "Tag content (TF-IDF)": {
+      "precision@10": 0.07527042987570537,
+      "recall@10": 0.053425658303095896,
+      "ndcg@10": 0.0849787610544565,
+      "hit_rate@10": 0.44305506083500495,
+      "catalog_coverage": 0.5277,
+      "users_evaluated": 53341,
+      "median_popularity_rank_of_recs": 1503.0
+    },
+    "Hybrid (ALS 0.70 + content)": {
+      "precision@10": 0.2522712360098236,
+      "recall@10": 0.1748167702782228,
+      "ndcg@10": 0.28228837666794926,
+      "hit_rate@10": 0.8805609193678409,
+      "catalog_coverage": 0.4654,
+      "users_evaluated": 53341,
+      "median_popularity_rank_of_recs": 296.0
+    }
+  },
+  "cold_start_3_likes": {
+    "Popularity": {
+      "precision@10": 0.26700700700700697,
+      "recall@10": 0.037465771401063504,
+      "ndcg@10": 0.28496470799550994,
+      "hit_rate@10": 0.6960960960960961,
+      "catalog_coverage": 0.0013,
+      "users_evaluated": 4995
+    },
+    "ALS matrix factorization": {
+      "precision@10": 0.3868068068068068,
+      "recall@10": 0.056737671476239766,
+      "ndcg@10": 0.41589567495535773,
+      "hit_rate@10": 0.9243243243243243,
+      "catalog_coverage": 0.3302,
+      "users_evaluated": 4995
+    },
+    "Tag content (TF-IDF)": {
+      "precision@10": 0.27293293293293297,
+      "recall@10": 0.03987222781350617,
+      "ndcg@10": 0.2950926402521808,
+      "hit_rate@10": 0.8188188188188188,
+      "catalog_coverage": 0.7035,
+      "users_evaluated": 4995
+    },
+    "Hybrid (ALS 0.70 + content)": {
+      "precision@10": 0.3955955955955956,
+      "recall@10": 0.05805423049136167,
+      "ndcg@10": 0.42594111093447007,
+      "hit_rate@10": 0.9263263263263263,
+      "catalog_coverage": 0.3783,
+      "users_evaluated": 4995
+    }
+  },
+  "runtime_sec": 335
+}
